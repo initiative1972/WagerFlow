@@ -1,0 +1,10 @@
+{
+  "description": "Tolerances and gate rules for the dual-run reconciliation. Illustrative values.",
+  "turnover_tolerance_pct": 0.001,
+  "payout_tolerance_pct": 0.001,
+  "ggr_tolerance_pct": 0.001,
+  "row_count_must_match": true,
+  "micro_hash_must_match": true,
+  "settlement_window": "T+1",
+  "notes": "Row count and micro-hash parity are hard gates; turnover drift is checked against tolerance only when counts and hashes pass."
+}

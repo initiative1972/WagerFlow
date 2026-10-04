@@ -1,0 +1,29 @@
+{
+  "description": "Metadata-driven source-to-target pipeline config. Illustrative.",
+  "sources": [
+    {
+      "name": "legacy_customer",
+      "ingest": "dms_cdc",
+      "target_bronze": "s3://wagerflow/bronze/customer",
+      "target_silver": "s3://wagerflow/silver/dim_customer",
+      "mode": "batch"
+    },
+    {
+      "name": "legacy_wagers",
+      "ingest": "dms_cdc",
+      "target_bronze": "s3://wagerflow/bronze/wagers",
+      "target_silver": "s3://wagerflow/silver/fact_wager",
+      "mode": "batch"
+    },
+    {
+      "name": "odds_feed",
+      "ingest": "kinesis",
+      "target_bronze": "s3://wagerflow/bronze/odds",
+      "mode": "stream"
+    }
+  ],
+  "gold": {
+    "daily_mart": "s3://wagerflow/gold/fact_betting_daily",
+    "redshift_schema": "wagerflow_marts"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "description": "Critical Data Elements (CDEs). Single source of truth for both SCD2 change detection and reconciliation hashing. Synthetic/illustrative.",
+  "customer_dimension": {
+    "business_key": "account_id",
+    "cde_columns": ["account_status", "risk_tier", "daily_deposit_limit", "jurisdiction"],
+    "owner": "Customer Data Domain"
+  },
+  "wager_fact": {
+    "business_key": ["bet_id"],
+    "cde_columns": ["stake_amount", "payout_amount"],
+    "owner": "Settlement & Finance"
+  },
+  "pii_columns": ["email", "phone", "card_number"]
+}
